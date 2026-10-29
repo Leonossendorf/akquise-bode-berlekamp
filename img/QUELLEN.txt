@@ -12,4 +12,4 @@ Beispielbilder von Unsplash (Unsplash-Lizenz), im Entwurf als „Beispielbild“
 - beispiel-kanal.jpg/.webp: Michael Hilgefort, https://unsplash.com/photos/O8RXu9h-otk (derzeit nicht eingebunden)
 - beispiel-wartebereich.jpg/.webp: Petr, https://unsplash.com/photos/HuWm7malJ18 (derzeit nicht eingebunden)
 
-Eichhörnchen, Nuss und Zweig: eigene SVG-Zeichnungen (Leon Oßendorf / Entwurf), kein Fremdmaterial.
+- eichhoernchen.png/.webp: das Original-Eichhörnchen der Kanzlei aus ihrem Startseiten-Banner (stb-neuenkirchen.de, /s/cc_images/cache_8363320.jpg, 2018), freigestellt. Material des Betriebs, nur für diesen Entwurf.
