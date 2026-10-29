@@ -219,3 +219,76 @@ input[type=range]{width:100%;accent-color:var(--akzent)}
 .faq summary{cursor:pointer;font-weight:600;padding:.2rem 0}
 .faq p{margin:.6rem 0 0}
 .label{display:inline-block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .5rem;border:1px solid var(--rand-stark);color:var(--text-leise)}
+
+/* ===== Fassung 3: Hero-Komposition, Animationen, Formular, Anleitung ===== */
+.hero{position:relative;overflow:hidden}
+.hero-raster{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:2rem 4rem;align-items:end}
+@media (max-width:900px){.hero-raster{grid-template-columns:1fr}}
+.hero-kicker{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-leise);margin:0 0 1.6rem}
+.hero-kicker span+span::before{content:"·";margin-right:1.2rem;opacity:.5}
+.hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:.98;margin:0 0 1.2rem;hyphens:manual;max-width:12ch}
+.hero-satz{font-size:1.2rem;max-width:30rem;margin-bottom:1.6rem}
+.hero-knoepfe{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-bilder{position:relative;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto;gap:.75rem}
+.hero-bilder figure{margin:0;position:relative;overflow:hidden}
+.hero-bilder img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.hero-bilder figure:hover img{transform:scale(1.03)}
+.hero-bilder .b1{grid-column:1/-1;grid-row:1}
+.hero-bilder .b1 img{aspect-ratio:16/9}
+.hero-bilder .b2{grid-column:1/3;grid-row:2}
+.hero-bilder .b3{grid-column:3/5;grid-row:2}
+.hero-bilder .b2 img,.hero-bilder .b3 img{aspect-ratio:1;object-position:50% 35%}
+.hero-bilder figcaption{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-leise);margin-top:.35rem}
+.hero-bilder .b4{grid-column:5/-1;grid-row:2;font-size:.85rem;padding:.6rem .8rem;border-left:2px solid var(--akzent)}
+.hero-bilder .b4 strong{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-leise);margin-bottom:.3rem}
+.hero-bilder .b4 p{margin:0 0 .25em}
+@media (max-width:560px){.hero-bilder .b2{grid-column:1/4}.hero-bilder .b3{grid-column:4/7}.hero-bilder .b4{grid-column:1/-1;grid-row:3}}
+.hero-figur{position:absolute;bottom:0;pointer-events:none}
+
+/* Animationen: sanftes Einblenden beim Scrollen, Hover, Übergänge */
+.ein{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.ein.sichtbar{opacity:1;transform:none}
+.ein-2{transition-delay:.12s}.ein-3{transition-delay:.24s}.ein-4{transition-delay:.36s}
+html.ohne-js .ein{opacity:1;transform:none}
+.btn,.link-pfeil,.nav a,.wahl label,.team-filter button{transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-1px)}
+.link-pfeil::after{display:inline-block;transition:transform .25s ease}
+.link-pfeil:hover::after{transform:translateX(4px)}
+@keyframes hero-auf{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-text > *{animation:hero-auf .6s ease both}
+.hero-text > *:nth-child(2){animation-delay:.1s}.hero-text > *:nth-child(3){animation-delay:.2s}.hero-text > *:nth-child(4){animation-delay:.3s}
+.hero-bilder > *{animation:hero-auf .7s ease both;animation-delay:.25s}
+.hero-bilder > *:nth-child(2){animation-delay:.4s}.hero-bilder > *:nth-child(3){animation-delay:.5s}.hero-bilder > *:nth-child(4){animation-delay:.6s}
+.hero-figur{animation:hero-auf .8s ease .5s both}
+.hero-text > [data-only],.hero-text > picture{animation:none}
+@media (prefers-reduced-motion:reduce){.ein{opacity:1;transform:none;transition:none}.hero-text > *,.hero-bilder > *,.hero-figur{animation:none}.hero-bilder figure:hover img{transform:none}}
+
+/* Formular, Fassung 3: wenige Felder, Beschriftung über dem Feld, deutlicher Knopf */
+.f3{max-width:34rem}
+.f3 .feldzeile{margin-bottom:1.4rem}
+.f3 .feldzeile label{font-weight:600;font-size:.95rem;margin-bottom:.2rem}
+.f3 .feldzeile input,.f3 .feldzeile textarea{padding:.85rem .9rem;border:1.5px solid var(--rand-stark);background:#fff;color:#111;font-size:1rem}
+.f3 .feldzeile input:focus,.f3 .feldzeile textarea:focus{border-color:var(--akzent);outline:3px solid var(--fokus);outline-offset:2px}
+.f3 .wahl{gap:.5rem}
+.f3 .wahl label{padding:.55rem 1rem;font-size:.95rem}
+.f3 .btn{padding:.95rem 1.8rem;font-size:1.05rem;width:100%;justify-content:center}
+@media (min-width:600px){.f3 .btn{width:auto}}
+.f3 .demo-hinweis{margin-top:.9rem}
+.erfolg{max-width:34rem;padding:1rem 0;display:grid;gap:.6rem}
+.erfolg .haken-gross{width:3.2rem;height:3.2rem;border-radius:50%;background:var(--gruen);display:grid;place-items:center;color:#fff;margin-bottom:.4rem;animation:hero-auf .5s ease both}
+.erfolg h3{margin:0}
+.erfolg p{margin:0}
+.erfolg .weiter{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+
+/* Schritt-für-Schritt-Anleitung */
+.schritte{list-style:none;margin:0;padding:0}
+.schritte li{display:grid;grid-template-columns:minmax(0,1fr) 11rem;gap:1.5rem 3rem;align-items:center;padding:2rem 0;border-top:1px solid var(--rand)}
+.schritte li:last-child{border-bottom:1px solid var(--rand)}
+.schritte .nr{display:block;font-size:2.4rem;line-height:1;font-weight:700;color:var(--akzent);margin-bottom:.4rem}
+.schritte h3{margin-bottom:.3em}
+.schritte p{margin:0 0 .5em}
+.schritte figure{margin:0}
+.schritte img{width:100%;border:1px solid var(--rand)}
+.schritte figcaption{font-size:.72rem;color:var(--text-leise);margin-top:.35rem}
+@media (max-width:640px){.schritte li{grid-template-columns:1fr}.schritte figure{max-width:13rem}}
+.anleitung-quelle{font-size:.78rem;color:var(--text-leise);margin-top:1rem}

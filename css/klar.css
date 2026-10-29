@@ -26,3 +26,17 @@
 [data-design="klar"] .zitat{font-style:italic;border-left-color:var(--akzent-2)}
 [data-design="klar"] .fuss{background:var(--flaeche)}
 [data-design="klar"] .karriere{border-top:1px solid var(--rand);border-bottom:1px solid var(--rand)}
+
+/* Fassung 3 */
+[data-design="klar"] .hero{background:var(--grund);padding-block:clamp(2.5rem,6vw,5rem) 0}
+[data-design="klar"] .hero-raster{padding-bottom:clamp(2.5rem,6vw,5rem)}
+[data-design="klar"] .hero h1{font-weight:500}
+[data-design="klar"] .hero h1 em{font-style:italic;font-weight:400;color:var(--akzent)}
+[data-design="klar"] .hero-text{border-left:1px solid var(--rand);padding-left:clamp(1rem,3vw,2.5rem);position:relative}
+[data-design="klar"] .hero-text::before{content:"Steuerberater · Partnerschaft mbB";position:absolute;left:-1.4rem;top:0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-leise);white-space:nowrap}
+@media (max-width:900px){[data-design="klar"] .hero-text{border-left:0;padding-left:0}[data-design="klar"] .hero-text::before{display:none}}
+[data-design="klar"] .hero-bilder .b4{background:var(--akzent);color:#fff;border-left:0}
+[data-design="klar"] .hero-bilder .b4 strong{color:#bfe0f7}
+[data-design="klar"] .hero-bilder .b4 .status::before{background:#9fd3b0}
+[data-design="klar"] .f3 .wahl label:has(input:checked){background:var(--akzent);border-color:var(--akzent);color:#fff}
+[data-design="klar"] .schritte .nr{font-family:var(--serif)}

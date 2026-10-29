@@ -75,22 +75,31 @@
       form.querySelectorAll('[data-zeig]').forEach(function(el){ var liste=el.getAttribute('data-zeig').split(' '); var an=!!t&&liste.indexOf(t)>=0; el.classList.toggle('aktiv',an); el.querySelectorAll('input,textarea,select').forEach(function(i){ i.disabled=!an; }); }); }
     themaRadios.forEach(function(r){ r.addEventListener('change',zeigen); });
     var vor=null; try{ var m=location.search.match(/[?&]thema=([a-z]+)/); if(m) vor=m[1]; if(!vor&&location.hash){ var hm=location.hash.match(/thema=([a-z]+)/); if(hm) vor=hm[1]; } }catch(e){}
+    if(vor==='baulohn'||vor==='mandant'||vor==='frage'){ var ta=form.querySelector('textarea[name="nachricht"]'); if(vor==='baulohn'&&ta&&!ta.value) ta.value='Anfrage zum Baulohn: '; vor='anfrage'; }
     if(vor){ var r=form.querySelector('input[name="thema"][value="'+vor+'"]'); if(r) r.checked=true; }
     zeigen();
     form.querySelectorAll('input[type=range]').forEach(function(rg){ var out=form.querySelector('output[for="'+rg.id+'"]'); if(out){ out.value=rg.value; rg.addEventListener('input',function(){ out.value=rg.value; }); } });
     form.addEventListener('submit',function(e){ e.preventDefault();
-      var tel=form.querySelector('input[name="telefon"]'), mail=form.querySelector('input[name="email"]'), fehler=form.querySelector('.fehler');
-      var ok=(tel&&tel.value.trim())||(mail&&mail.value.trim());
-      if(!ok){ fehler.textContent='Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an, damit die Kanzlei antworten kann.'; fehler.hidden=false; (tel||mail).focus(); return; }
+      var tel=form.querySelector('input[name="telefon"]'), mail=form.querySelector('input[name="email"]'), kontakt=form.querySelector('input[name="kontakt"]'), fehler=form.querySelector('.fehler');
+      var ok=(tel&&tel.value.trim())||(mail&&mail.value.trim())||(kontakt&&kontakt.value.trim());
+      if(!ok){ fehler.textContent='Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an, damit die Kanzlei antworten kann.'; fehler.hidden=false; (kontakt||tel||mail).focus(); return; }
       fehler.hidden=true;
       var w=form.querySelector('input[name="thema"]:checked'); var t=w?w.value:'';
       var ziel = (t==='bewerbung'||form.hasAttribute('data-bewerbung')) ? 'frank.bode@stb-neuenkirchen.de (Frank Bode)' : 'info@stb-neuenkirchen.de';
-      var box=form.parentNode.querySelector('.bestaetigung'); if(!box){ box=document.createElement('div'); box.className='bestaetigung'; box.setAttribute('role','status'); box.tabIndex=-1; form.parentNode.insertBefore(box,form.nextSibling); }
-      box.innerHTML='<h3>Danke. Das ist ein Entwurf, es wurde nichts versendet.</h3><p>In der fertigen Seite ginge Ihre Nachricht jetzt an <strong>'+ziel+'</strong>. Die Kanzlei meldet sich zu den Öffnungszeiten, bei Rückruf-Wunsch im gewählten Zeitfenster.</p><p class="klein leise">Vertrauliche Unterlagen gehen nie über dieses Formular, sondern über die App oder die Belegzentrale.</p>';
+      var box=form.parentNode.querySelector('.erfolg'); if(!box){ box=document.createElement('div'); box.className='erfolg'; box.setAttribute('role','status'); box.tabIndex=-1; form.parentNode.insertBefore(box,form.nextSibling); }
+      var name=(form.querySelector('input[name="name"]')||{}).value||''; name=name.trim();
+      box.innerHTML='<div class="haken-gross" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></div><h3>Danke'+(name?', '+name:'')+'. Ihre Nachricht ist angekommen.</h3><p>Die Kanzlei meldet sich zu den Öffnungszeiten bei Ihnen'+(t==='rueckruf'?' und ruft im gewünschten Zeitfenster zurück':'')+'.</p><p class="klein leise">Entwurf: Es wurde nichts versendet. In der fertigen Seite ginge die Nachricht an '+ziel+'.</p><div class="weiter"><a class="btn btn-zweit" href="digital.html">Belege senden</a><a class="link-pfeil" href="index.html">Zur Startseite</a></div>';
       form.hidden=true; box.focus(); });
   });
 
+  /* Sanftes Einblenden beim Scrollen */
+  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('sichtbar'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    document.querySelectorAll('.ein').forEach(function(el){ io.observe(el); });
+    /* Sicherheitsnetz: nach kurzer Zeit alles sichtbar, falls der Beobachter nicht feuert (Druck, Screenshot, alte Browser) */
+    setTimeout(function(){ document.querySelectorAll('.ein').forEach(function(el){ el.classList.add('sichtbar'); }); },1500);
+  } else { document.querySelectorAll('.ein').forEach(function(el){ el.classList.add('sichtbar'); }); }
+
   /* Kacheln, die ein Thema im Formular vorwählen */
   document.querySelectorAll('[data-thema-link]').forEach(function(a){ a.addEventListener('click',function(e){ var ziel=document.querySelector(a.getAttribute('href').split('?')[0].split('#')[0]==='' ? '#kontakt' : null); var form=document.querySelector('form[data-demo]');
-    if(form && a.getAttribute('href').indexOf('#kontakt')>=0){ e.preventDefault(); var r=form.querySelector('input[name="thema"][value="'+a.getAttribute('data-thema-link')+'"]'); if(r){ r.checked=true; r.dispatchEvent(new Event('change')); } form.hidden=false; var b=form.parentNode.querySelector('.bestaetigung'); if(b) b.remove(); document.getElementById('kontakt').scrollIntoView({behavior:'smooth'}); setTimeout(function(){ (r||form).focus(); },400); } }); });
+    if(form && a.getAttribute('href').indexOf('#kontakt')>=0){ e.preventDefault(); var r=form.querySelector('input[name="thema"][value="'+a.getAttribute('data-thema-link')+'"]'); if(r){ r.checked=true; r.dispatchEvent(new Event('change')); } form.hidden=false; var b=form.parentNode.querySelector('.erfolg'); if(b) b.remove(); document.getElementById('kontakt').scrollIntoView({behavior:'smooth'}); setTimeout(function(){ (r||form).focus(); },400); } }); });
 })();

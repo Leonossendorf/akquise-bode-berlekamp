@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de-DE" data-design="klar" data-standort="neuenkirchen">
+<html lang="de-DE" class="ohne-js" data-design="klar" data-standort="neuenkirchen">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,45 +48,28 @@
 <section class="abschnitt karriere" aria-labelledby="k-h"><div class="wrap spalten-text">
   <div><span class="nummer">Karriere</span><h1 id="k-h">Knacken Sie mit uns die Steuernüsse.</h1></div>
   <div><p class="gross">Wir sind eine Steuerberatungsgesellschaft in Neuenkirchen und Metelen mit Mandanten aus diversen Sparten. Bei uns erwarten Sie abwechslungsreiche Aufgaben bei der Betreuung von Mandantenbuchhaltungen aller Rechtsformen.</p><p><a class="btn" href="#kontakt">In zwei Minuten bewerben</a></p></div>
-</div><div data-only="nuss"><picture><source srcset="img/eichhoernchen.webp" type="image/webp"><img class="hoernchen-karriere" src="img/eichhoernchen.png" alt="" width="343" height="317" loading="lazy"></picture></div></section>
+</div><div data-only="nuss"><picture><source srcset="img/eich-megafon.webp" type="image/webp"><img class="hero-figur hoernchen-karriere" src="img/eich-megafon.png" alt="" width="357" height="298" loading="lazy"></picture></div></section>
 <section class="abschnitt"><div class="wrap spalten-3">
   <div><h2 style="font-size:1.25rem">Wir freuen uns über Bewerbungen als</h2><ul class="haken"><li>Steuerfachangestellte (m/w/d), Vollzeit oder Teilzeit</li><li>Bilanzbuchhalter (m/w/d)</li><li>Auszubildende zur/zum Steuerfachangestellten</li><li>Initiativbewerbung</li></ul></div>
   <div><h2 style="font-size:1.25rem">Was Sie mitbringen</h2><ul class="haken"><li>Abgeschlossene Ausbildung als Steuerfachangestellte/r oder Bilanzbuchhalter/in</li><li>Erfahrung in Finanz- und Lohnbuchhaltung</li><li>Sicherer Umgang mit DATEV, Word und Excel</li><li>Freude am Kontakt mit Mandanten</li><li>Für die Ausbildung: Interesse an Zahlen und Gesetzen, sorgfältiges Arbeiten</li></ul></div>
   <div><h2 style="font-size:1.25rem">So arbeiten wir</h2><ul class="haken"><li>Zwei Standorte: Neuenkirchen und Metelen</li><li>DATEV-Arbeitsplatz, digitale Belegverarbeitung</li><li>Feste Ansprechpartner für Mandanten</li><li>Ausbildungsbetrieb</li></ul><p class="klein leise">Bewerbungen nimmt Frank Bode entgegen: frank.bode(at)stb-neuenkirchen.de, 05973 94 90-0.</p></div>
 </div></section>
-<section class="abschnitt" id="kontakt" aria-labelledby="kontakt-h"><div class="wrap kompakt">
+<section class="abschnitt ein" id="kontakt" aria-labelledby="kontakt-h"><div class="wrap kompakt">
   <div><span class="nummer">Kontakt</span><h2 id="kontakt-h">Bewerbung in zwei Minuten</h2><p class="leise">Kein Anschreiben nötig. Pflicht ist nur ein Rückweg: Telefon oder E-Mail. Lebenslauf gern anhängen.</p><p>Oder direkt: <a href="tel:+4959739490" data-tel>05973 94 90-0</a><br><a href="mailto:info@stb-neuenkirchen.de" data-mail>info@stb-neuenkirchen.de</a></p></div>
-  <form class="formular" data-demo novalidate>
+  <form class="formular f3" data-demo novalidate>
     <fieldset><legend>Worum geht es?</legend>
-      <div class="wahl">
-        <label><input type="radio" name="thema" value="mandant"> Mandant werden</label>
-        <label><input type="radio" name="thema" value="frage"> Frage als Mandant</label>
-        <label><input type="radio" name="thema" value="rueckruf"> Rückruf</label>
-        <label><input type="radio" name="thema" value="baulohn"> Baulohn</label>
-        <label><input type="radio" name="thema" value="bewerbung" checked> Bewerbung</label>
-      </div>
-    </fieldset>
-    <fieldset data-zeig="mandant baulohn"><legend>Ich bin …</legend>
-      <div class="wahl"><label><input type="radio" name="art" value="unternehmen"> Unternehmen</label><label><input type="radio" name="art" value="freiberufler"> Freiberufler</label><label><input type="radio" name="art" value="privat"> Privatperson</label></div>
+      <div class="wahl"><label><input type="radio" name="thema" value="anfrage"> Anfrage</label><label><input type="radio" name="thema" value="rueckruf"> Rückruf</label><label><input type="radio" name="thema" value="bewerbung" checked> Bewerbung</label></div>
     </fieldset>
     <fieldset data-zeig="bewerbung"><legend>Ich bewerbe mich als …</legend>
       <div class="wahl"><label><input type="radio" name="stelle" value="stfa"> Steuerfachangestellte/r</label><label><input type="radio" name="stelle" value="bibu"> Bilanzbuchhalter/in</label><label><input type="radio" name="stelle" value="azubi"> Auszubildende/r</label><label><input type="radio" name="stelle" value="initiativ"> Initiativ</label></div>
     </fieldset>
-    <div class="feldzeile" data-zeig="baulohn"><label for="f-beschaeftigte">Wie viele Beschäftigte rechnen Sie ab? (Angabe optional)</label><div class="schieber"><input type="range" id="f-beschaeftigte" name="beschaeftigte" min="1" max="100" value="12"><output for="f-beschaeftigte">12</output></div></div>
-    <fieldset data-zeig="mandant frage rueckruf baulohn"><legend>Welcher Standort passt Ihnen? (Angabe optional)</legend>
-      <div class="wahl"><label><input type="radio" name="standort" value="neuenkirchen"> Neuenkirchen</label><label><input type="radio" name="standort" value="metelen"> Metelen</label><label><input type="radio" name="standort" value="egal"> Egal</label></div>
-    </fieldset>
     <fieldset data-zeig="rueckruf"><legend>Wann passt der Rückruf?</legend>
       <div class="wahl"><label><input type="radio" name="zeit" value="vormittags"> Vormittags</label><label><input type="radio" name="zeit" value="nachmittags"> Nachmittags</label><label><input type="radio" name="zeit" value="egal"> Egal</label></div>
     </fieldset>
-    <div class="feldzeile"><label for="f-name">Name (Angabe optional)</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
-    <div class="zwei">
-      <div class="feldzeile"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel"><span class="hinweis">Telefon oder E-Mail, eins reicht.</span></div>
-      <div class="feldzeile"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email"></div>
-    </div>
-    <div class="feldzeile" data-zeig="bewerbung"><label for="f-start">Frühester Start (Angabe optional)</label><input id="f-start" name="start" type="text" placeholder="z. B. 1. August 2027"></div>
-    <div class="feldzeile" data-zeig="bewerbung"><label for="f-cv">Lebenslauf anhängen (Angabe optional)</label><input id="f-cv" name="lebenslauf" type="file" accept=".pdf,.jpg,.png"></div>
-    <div class="feldzeile"><label for="f-text">Ihre Nachricht (Angabe optional)</label><textarea id="f-text" name="nachricht"></textarea></div>
+    <div class="feldzeile"><label for="f-name">Ihr Name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+    <div class="feldzeile"><label for="f-kontakt">Telefon oder E-Mail</label><input id="f-kontakt" name="kontakt" type="text" autocomplete="on" inputmode="email" required></div>
+    <div class="feldzeile"><label for="f-text">Ihre Nachricht</label><textarea id="f-text" name="nachricht" placeholder="Worum geht es? Ein Satz genügt."></textarea></div>
+    <div class="feldzeile" data-zeig="bewerbung"><label for="f-cv">Lebenslauf (Angabe optional)</label><input id="f-cv" name="lebenslauf" type="file" accept=".pdf,.jpg,.png"></div>
     <p class="fehler" role="alert" hidden></p>
     <button class="btn" type="submit">Nachricht senden</button>
     <p class="demo-hinweis">Entwurf: Dieses Formular versendet nichts. In der fertigen Seite geht die Nachricht an info@stb-neuenkirchen.de, Bewerbungen an Frank Bode.</p>
@@ -100,7 +83,7 @@
     <div><h2>Metelen</h2><address><p><strong>Steuerberater Schaper &amp; Partner mbB</strong></p><p>Eper Straße 6, 48629 Metelen</p><p><a href="tel:+4925569897">02556 98 97-0</a> · Fax 02556 98 97-2<br><a href="mailto:info@stb-metelen.de">info@stb-metelen.de</a></p></address><p class="klein leise">Mo–Fr 9–13 Uhr, und nach Vereinbarung</p></div>
     <div><h2>Seiten</h2><ul><li><a href="leistungen.html">Leistungen</a></li><li><a href="leistungen.html#baulohn">Baulohn</a></li><li><a href="digital.html">Digital: App, Belegzentrale, Fernwartung</a></li><li><a href="kanzlei.html">Kanzlei und Team</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="kontakt.html">Kontakt und Öffnungszeiten</a></li></ul><ul style="margin-top:.8rem"><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="barrierefreiheit.html">Barrierefreiheit</a></li></ul></div>
   </div>
-  <div class="entwurf-hinweis"><p>Unverbindlicher Entwurf von Leon Oßendorf (Webdesign, leonossendorf.de), kein offizieller Auftritt von Bode | Berlekamp Steuerberater Partnerschaft mbB und Steuerberater Schaper &amp; Partner mbB. Texte, Logo, Fotos und das Eichhörnchen stammen von stb-neuenkirchen.de (Stand 28.10.2026). Bild mit dem Vermerk „Beispielbild“: Unsplash, Wasif Ali. Formulare versenden in diesem Entwurf nichts. Diese Seite setzt keine Cookies und lädt keine Dienste von Dritten.</p></div>
+  <div class="entwurf-hinweis"><p>Unverbindlicher Entwurf von Leon Oßendorf (Webdesign, leonossendorf.de), kein offizieller Auftritt von Bode | Berlekamp Steuerberater Partnerschaft mbB und Steuerberater Schaper &amp; Partner mbB. Texte, Logo, Fotos und das Eichhörnchen stammen von stb-neuenkirchen.de (Stand 28.10.2026). Bild mit dem Vermerk „Beispielbild“: Unsplash, Wasif Ali. Beispielansichten der App: offizielle App-Store-Screenshots (dimento.com gmbh). Formulare versenden in diesem Entwurf nichts. Diese Seite setzt keine Cookies und lädt keine Dienste von Dritten.</p></div>
 </div></footer>
 <nav class="daumen" aria-label="Schnellkontakt"><a class="btn" href="tel:+4959739490" data-tel>05973 94 90-0</a><a class="btn btn-zweit" href="kontakt.html">Nachricht</a></nav>
 <script src="js/main.js"></script>
