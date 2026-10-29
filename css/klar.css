@@ -1,0 +1,58 @@
+/* Design 2 „Klar“: kühl, ruhig, editorial. Logo-Blau, Serife, gerade Linien. */
+[data-design="klar"]{
+  --grund:#ffffff;--flaeche:#f3f5f8;--text:#1a2633;--text-leise:#4b5868;
+  --akzent:#003e6e;--akzent-2:#0071b8;--link:#003e6e;--rand:#d4d8de;--rand-stark:#9aa4b2;
+  --holz:#b07a45;--gruen:#2e7d4f;--fokus:#0071b8;--radius:4px;--schatten:0 6px 20px rgba(0,30,60,.08);
+  --serif:"Source Serif 4",Georgia,serif;--sans:"Source Sans 3",system-ui,sans-serif;
+}
+[data-design="klar"] body{font-family:var(--sans);color:var(--text);background:var(--grund)}
+[data-design="klar"] h1,[data-design="klar"] h2,[data-design="klar"] h3{font-family:var(--serif);font-weight:600;color:var(--akzent)}
+[data-design="klar"] h1{font-size:clamp(1.7rem,4vw,3rem);letter-spacing:-.01em}
+[data-design="klar"] h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+[data-design="klar"] h3{font-size:1.2rem}
+[data-design="klar"] [data-only="nuss"]{display:none!important}
+[data-design="klar"] .kopf-oben{background:var(--akzent);color:#fff;--rand:rgba(255,255,255,.4);--flaeche:rgba(255,255,255,.12)}
+[data-design="klar"] .kopf-oben .standort-wahl button[aria-pressed="true"]{background:#fff;color:var(--akzent)}
+[data-design="klar"] .kopf-haupt{border-bottom:1px solid var(--rand)}
+[data-design="klar"] .nav a{letter-spacing:.01em}
+
+/* Hero */
+[data-design="klar"] .hero{padding-block:clamp(2rem,5vw,4rem);border-bottom:1px solid var(--rand)}
+[data-design="klar"] .hero-innen{display:grid;gap:2.5rem;grid-template-columns:1.1fr 1fr;align-items:center}
+@media (max-width:860px){[data-design="klar"] .hero-innen{grid-template-columns:1fr}}
+[data-design="klar"] .hero .label{background:transparent;border:1px solid var(--rand);color:var(--akzent-2)}
+[data-design="klar"] .hero h1 em{font-style:normal;color:var(--akzent-2);display:block}
+[data-design="klar"] .hero p.gross{font-size:1.15rem;max-width:34rem}
+[data-design="klar"] .hero-bild{border-left:6px solid var(--holz);padding-left:0}
+[data-design="klar"] .hero-bild figcaption{font-size:.85rem;color:var(--text-leise);margin-top:.5rem}
+[data-design="klar"] .felder{margin-top:2rem}
+[data-design="klar"] .feld{border-top:3px solid var(--akzent)}
+
+/* Abschnitte */
+[data-design="klar"] .abschnitt-grau{background:var(--flaeche)}
+[data-design="klar"] .abschnitt-blau{background:var(--akzent);color:#fff}
+[data-design="klar"] .abschnitt-blau h2,[data-design="klar"] .abschnitt-blau h3{color:#fff}
+[data-design="klar"] .abschnitt-blau a{color:#fff}
+[data-design="klar"] .abschnitt-blau .btn{background:#fff;color:var(--akzent);border-color:#fff}
+[data-design="klar"] .abschnitt-blau .haken li::before{color:#9fd3b0}
+[data-design="klar"] .ueberzeile{font-family:var(--sans);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--akzent-2);margin-bottom:.4rem;display:block}
+[data-design="klar"] .trenn{height:1px;background:var(--rand);margin-block:2rem}
+[data-design="klar"] .kachel h3{font-family:var(--serif)}
+[data-design="klar"] .kachel{border-top:3px solid var(--akzent-2)}
+[data-design="klar"] .digital-persoenlich{display:grid;gap:0;grid-template-columns:1fr 1fr;border:1px solid var(--rand)}
+[data-design="klar"] .digital-persoenlich > div{padding:2rem}
+[data-design="klar"] .digital-persoenlich > div:first-child{border-right:1px solid var(--rand)}
+@media (max-width:760px){[data-design="klar"] .digital-persoenlich{grid-template-columns:1fr}[data-design="klar"] .digital-persoenlich > div:first-child{border-right:0;border-bottom:1px solid var(--rand)}}
+[data-design="klar"] .partner-bilder{display:flex;gap:1rem;margin-bottom:1rem}
+[data-design="klar"] .partner-bilder figure{margin:0;text-align:center;font-size:.85rem}
+[data-design="klar"] .partner-bilder img{width:6rem;height:6rem;object-fit:cover;border-radius:50%;margin:0 auto .3rem;filter:saturate(.9)}
+[data-design="klar"] .zitat{font-family:var(--serif);font-size:1.3rem;font-style:italic;border-left:4px solid var(--holz);padding-left:1rem;color:var(--text)}
+[data-design="klar"] .standort-karte h2,[data-design="klar"] .standort-karte h3{display:flex;align-items:baseline;gap:.6rem;font-size:1.2rem}
+[data-design="klar"] .standort-karte .ort{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--akzent-2)}
+[data-design="klar"] .fuss{background:var(--flaeche)}
+[data-design="klar"] .btn{border-radius:2px}
+[data-design="klar"] .chip{border-radius:2px}
+[data-design="klar"] .standort-wahl{border-radius:2px}
+[data-design="klar"] .entwurf button{border-radius:2px}
+[data-design="klar"] .chips label{border-radius:2px}
+[data-design="klar"] .karriere-teaser{border:1px solid var(--rand);border-left:6px solid var(--holz);padding:2rem}

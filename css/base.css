@@ -1,0 +1,176 @@
+/* Basis: Reset, Schriften, Barrierefreiheit, Formulare. Gilt für beide Designs. */
+@font-face{font-family:"Source Sans 3";src:url("../fonts/source-sans-3-latin-wght-normal.woff2") format("woff2");font-weight:200 900;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url("../fonts/source-serif-4-latin-wght-normal.woff2") format("woff2");font-weight:200 900;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url("../fonts/source-serif-4-latin-wght-italic.woff2") format("woff2");font-weight:200 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Bitter";src:url("../fonts/bitter-latin.woff2") format("woff2");font-weight:400 700;font-display:swap}
+@font-face{font-family:"Caveat";src:url("../fonts/caveat-latin.woff2") format("woff2");font-weight:500;font-display:swap}
+
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:112.5%;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html.schrift-gross{font-size:131%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,picture{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{line-height:1.2;margin:0 0 .5em;overflow-wrap:break-word;hyphens:auto}
+@media (max-width:480px){.label{white-space:normal;border-radius:12px;line-height:1.3}}
+p,ul,ol{margin:0 0 1em}
+ul.sauber,ol.sauber{list-style:none;padding:0;margin:0}
+a{color:var(--link);text-decoration-thickness:.08em;text-underline-offset:.15em}
+a:hover{text-decoration-thickness:.15em}
+:focus-visible{outline:3px solid var(--fokus);outline-offset:3px;border-radius:2px}
+button{font:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.nur-vorleser{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:.5rem;top:-4rem;padding:.6rem 1rem;background:#111;color:#fff;z-index:1000;border-radius:4px}
+.skip:focus{top:.5rem}
+
+/* Breite */
+.wrap{width:min(100% - 2rem, 72rem);margin-inline:auto}
+.wrap-schmal{width:min(100% - 2rem, 48rem);margin-inline:auto}
+.abschnitt{padding-block:clamp(2.5rem,6vw,5rem)}
+
+/* Entwurfsbanner mit Design-Schalter */
+.entwurf{background:#1a1a1a;color:#fff;font-size:.8rem;padding:.45rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:center;text-align:center}
+.entwurf .schalter{display:inline-flex;gap:.3rem;align-items:center}
+.entwurf .schalter span{opacity:.75;margin-right:.2rem}
+.entwurf button{border:1px solid #777;background:transparent;color:#fff;border-radius:999px;padding:.15rem .7rem;font-size:.8rem}
+.entwurf button[aria-pressed="true"]{background:#fff;color:#111;border-color:#fff;font-weight:600}
+.entwurf a{color:#fff}
+
+/* Kopfzeile */
+.kopf-oben{font-size:.85rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between;padding-block:.45rem}
+.kopf-oben .rechts{display:flex;flex-wrap:wrap;gap:.4rem .6rem;align-items:center}
+.standort-wahl{display:inline-flex;border:1px solid var(--rand);border-radius:999px;overflow:hidden}
+.standort-wahl button{border:0;background:transparent;color:inherit;padding:.25rem .8rem;font-size:.85rem}
+.standort-wahl button[aria-pressed="true"]{background:var(--akzent);color:#fff}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--rand);border-radius:999px;padding:.25rem .8rem;text-decoration:none;color:inherit;white-space:nowrap}
+.chip:hover{background:var(--flaeche)}
+.kopf-haupt{display:flex;align-items:center;gap:1rem;padding-block:.8rem;position:relative}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit;margin-right:auto}
+.logo img.marke{height:2.6rem;width:auto}
+.logo img.wort{height:1.5rem;width:auto}
+.nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0}
+.nav a{text-decoration:none;color:inherit;font-weight:500;padding:.3rem 0;border-bottom:2px solid transparent}
+.nav a[aria-current="page"]{border-bottom-color:var(--akzent)}
+.nav a:hover{border-bottom-color:var(--rand)}
+.menu-knopf{display:none;border:1px solid var(--rand);background:transparent;color:inherit;border-radius:6px;padding:.4rem .8rem}
+.schrift{border:1px solid var(--rand);background:transparent;color:inherit;border-radius:6px;padding:.3rem .6rem;font-size:.8rem;line-height:1}
+.schrift[aria-pressed="true"]{background:var(--akzent);color:#fff;border-color:var(--akzent)}
+@media (max-width:900px){
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--grund);border-top:1px solid var(--rand);border-bottom:1px solid var(--rand);z-index:50;padding:.5rem 1rem 1rem}
+  .nav.offen{display:block}
+  .nav ul{flex-direction:column;gap:0}
+  .nav a{display:block;padding:.7rem 0;border-bottom:1px solid var(--rand)}
+  .menu-knopf{display:inline-block}
+  .kopf-haupt .btn-haupt{display:none}
+  .logo img.wort{height:1.1rem}
+}
+@media (max-width:480px){.kopf-oben .claim{display:none}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.75rem 1.3rem;border-radius:var(--radius);text-decoration:none;font-weight:600;border:2px solid var(--akzent);background:var(--akzent);color:#fff;min-height:44px}
+.btn:hover{filter:brightness(1.08)}
+.btn-zweit{background:transparent;color:var(--akzent)}
+.btn-zweit:hover{background:var(--flaeche)}
+
+/* Hero-Felder */
+.felder{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.feld{border:1px solid var(--rand);border-radius:var(--radius);padding:1rem 1.1rem;background:var(--grund)}
+.feld h2,.feld h3{font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;color:var(--text-leise)}
+.feld p{margin:0 0 .4em}
+.status{display:flex;align-items:center;gap:.5rem}
+.status::before{content:"";width:.7rem;height:.7rem;border-radius:50%;background:#999;flex:none}
+.status.offen::before{background:var(--gruen)}
+.status.zu::before{background:#b4463a}
+
+/* Kacheln und Karten */
+.kacheln{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.kachel{display:block;border:1px solid var(--rand);border-radius:var(--radius);padding:1.3rem;background:var(--grund);color:inherit;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.kachel:hover,.kachel:focus-visible{transform:translateY(-2px);box-shadow:var(--schatten)}
+.kachel h3{font-size:1.15rem}
+.kachel p{margin:0;color:var(--text-leise)}
+.kachel .pfeil{display:inline-block;margin-top:.6rem;font-weight:600;color:var(--akzent)}
+.karte{border:1px solid var(--rand);border-radius:var(--radius);padding:1.3rem;background:var(--grund)}
+.zweispaltig{display:grid;gap:2rem;grid-template-columns:1fr 1fr}
+@media (max-width:760px){.zweispaltig{grid-template-columns:1fr}}
+.haken{list-style:none;padding:0;margin:0}
+.haken li{padding-left:1.7rem;position:relative;margin-bottom:.35rem}
+.haken li::before{content:"✓";position:absolute;left:0;top:0;font-weight:700;color:var(--gruen)}
+.leise{color:var(--text-leise)}
+.klein{font-size:.85rem}
+.label{display:inline-block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px;background:var(--flaeche);color:var(--text-leise);margin-bottom:1rem}
+
+/* Zeitleiste */
+.zeitleiste{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+.zeitleiste li{display:grid;grid-template-columns:5rem 1fr;gap:1rem;align-items:baseline;border-left:3px solid var(--rand);padding-left:1rem}
+.zeitleiste .jahr{font-weight:700;color:var(--akzent)}
+
+/* Team */
+.team-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.team-filter button{border:1px solid var(--rand);background:transparent;color:inherit;border-radius:999px;padding:.4rem .9rem}
+.team-filter button[aria-pressed="true"]{background:var(--akzent);color:#fff;border-color:var(--akzent)}
+.person{display:flex;gap:1rem;align-items:flex-start}
+.person img{width:5.5rem;height:5.5rem;border-radius:50%;object-fit:cover;flex:none}
+.person .name{font-weight:700;margin:0}
+.person .funktion{margin:0;color:var(--text-leise)}
+.person .mail{font-size:.85rem;word-break:break-all}
+
+/* Formulare */
+form{margin:0}
+.formular{border:1px solid var(--rand);border-radius:var(--radius);padding:1.5rem;background:var(--grund)}
+.formular fieldset{border:0;padding:0;margin:0 0 1.2rem}
+.formular legend{font-weight:700;margin-bottom:.5rem;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips label{border:1px solid var(--rand);border-radius:999px;padding:.45rem 1rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;min-height:44px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label:has(input:checked){background:var(--akzent);color:#fff;border-color:var(--akzent)}
+.chips label:has(input:focus-visible){outline:3px solid var(--fokus);outline-offset:2px}
+.feldzeile{display:grid;gap:.3rem;margin-bottom:1rem}
+.feldzeile label{font-weight:600}
+.feldzeile .hinweis{font-size:.85rem;color:var(--text-leise)}
+.feldzeile input,.feldzeile textarea,.feldzeile select{font:inherit;padding:.7rem .8rem;border:1px solid var(--rand-stark);border-radius:calc(var(--radius)/1.5);background:#fff;color:#111;width:100%;min-height:44px}
+.feldzeile textarea{min-height:7rem;resize:vertical}
+.zwei{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+@media (max-width:600px){.zwei{grid-template-columns:1fr}}
+.schieber{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+.schieber output{font-weight:700;min-width:3ch;text-align:right}
+input[type=range]{width:100%;accent-color:var(--akzent)}
+.fehler{color:#b4463a;font-weight:600;margin:.5rem 0}
+.demo-hinweis{font-size:.85rem;color:var(--text-leise);margin-top:.6rem}
+.bestaetigung{border:2px solid var(--gruen);border-radius:var(--radius);padding:1.2rem;background:var(--grund)}
+.bestaetigung h3{margin-top:0}
+[data-zeig]{display:none}
+[data-zeig].aktiv{display:block}
+.zwei[data-zeig].aktiv{display:grid}
+
+/* Footer */
+.fuss{margin-top:3rem;padding-block:2.5rem 6rem;border-top:1px solid var(--rand);font-size:.95rem}
+.fuss .spalten{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.fuss h2{font-size:1rem;margin-bottom:.4rem}
+.fuss p{margin:0 0 .3em}
+.fuss .entwurf-hinweis{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rand);color:var(--text-leise);font-size:.85rem}
+.fuss ul{list-style:none;padding:0;margin:0}
+.fuss li{margin-bottom:.3rem}
+
+/* Daumenleiste am Handy */
+.daumen{display:none}
+@media (max-width:760px){
+  .daumen{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));background:var(--grund);border-top:1px solid var(--rand);z-index:40}
+  .daumen .btn{padding:.6rem;min-height:44px}
+}
+
+/* Hilfen */
+.beispiel{position:relative}
+.beispiel::after{content:"Beispielbild";position:absolute;right:.5rem;bottom:.5rem;font-size:.7rem;background:rgba(0,0,0,.6);color:#fff;padding:.15rem .5rem;border-radius:3px}
+.bild-rund{border-radius:var(--radius);overflow:hidden}
+.bild-rund img{width:100%;height:100%;object-fit:cover}
+.aktuell{border-left:4px solid var(--akzent);padding-left:1rem;margin-bottom:1rem}
+.aktuell time{font-size:.85rem;color:var(--text-leise)}
+.faq details{border-bottom:1px solid var(--rand);padding:.6rem 0}
+.faq summary{cursor:pointer;font-weight:600;padding:.3rem 0}
+.faq summary:hover{color:var(--akzent)}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--rand);vertical-align:top}
+th{font-weight:600}
+.zweck{font-size:.95rem}
+address{font-style:normal}

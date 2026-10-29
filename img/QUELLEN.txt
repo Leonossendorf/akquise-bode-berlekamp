@@ -1,0 +1,15 @@
+Bildquellen (Entwurf, nur für diesen Betrieb, noindex)
+
+Von der Website des Betriebs stb-neuenkirchen.de (abgerufen 28.10.2026):
+- logo-marke.png, wortmarke-neuenkirchen.png, wortmarke-metelen.png, favicon.png: aus /s/misc/logo.png (Bildmarke und Wortmarken ausgeschnitten, nicht verändert)
+- frank-bode.jpg/.webp: /s/cc_images/cache_12225797.png (Zuordnung von Leon Oßendorf bestätigt, 29.10.2026)
+- mark-berlekamp.jpg/.webp: /s/cc_images/cache_12225798.png
+- empfang.jpg/.webp: /s/cc_images/cache_7099147.jpg (Empfang Neuenkirchen)
+
+Beispielbilder von Unsplash (Unsplash-Lizenz), im Entwurf als „Beispielbild“ gekennzeichnet:
+- beispiel-baustelle.jpg/.webp: Wasif Ali, https://unsplash.com/photos/fBtNXtM4o3k
+- beispiel-lobby.jpg/.webp: Aalo Lens, https://unsplash.com/photos/Ypv0MH4izf8 (derzeit nicht eingebunden)
+- beispiel-kanal.jpg/.webp: Michael Hilgefort, https://unsplash.com/photos/O8RXu9h-otk (derzeit nicht eingebunden)
+- beispiel-wartebereich.jpg/.webp: Petr, https://unsplash.com/photos/HuWm7malJ18 (derzeit nicht eingebunden)
+
+Eichhörnchen, Nuss und Zweig: eigene SVG-Zeichnungen (Leon Oßendorf / Entwurf), kein Fremdmaterial.
