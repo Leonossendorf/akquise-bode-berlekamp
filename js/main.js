@@ -5,7 +5,7 @@
 
   /* Design-Schalter */
   function designAnwenden(d){
-    h.setAttribute('data-design',d); speichern('bb-design',d);
+    h.setAttribute('data-design',d); try{ sessionStorage.setItem('bb-design',d); }catch(e){}
     document.querySelectorAll('[data-design-wahl]').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-design-wahl')===d ? 'true':'false'); });
     document.querySelectorAll('[data-only]').forEach(function(el){ var zeig=el.getAttribute('data-only')===d; el.hidden=!zeig; el.setAttribute('aria-hidden', zeig?'false':'true'); });
     try{ var u=new URL(location.href); u.searchParams.set('design',d); history.replaceState(null,'',u); }catch(e){}
