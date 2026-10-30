@@ -39,8 +39,8 @@
 @media (max-width:900px){[data-design="nuss"] .hero-raster{grid-template-columns:1fr}}
 [data-design="nuss"] .hero-text{position:relative;padding-bottom:clamp(1rem,6vw,5rem);padding-right:clamp(8rem,17vw,13.5rem)}
 [data-design="nuss"] .hero h1 em{font-style:normal;color:var(--akzent);display:inline-block;border-bottom:.12em solid var(--akzent-2);line-height:1.05}
-[data-design="nuss"] .hero .eich-hero{position:absolute;right:0;bottom:0;width:clamp(8rem,16vw,13rem);pointer-events:none}
-@media (max-width:900px){[data-design="nuss"] .hero .eich-hero{right:0;width:7.5rem}[data-design="nuss"] .hero-text{padding-right:0;padding-bottom:9.5rem}}
+[data-design="nuss"] .hero .eich-hero{position:absolute;right:0;bottom:0;width:clamp(8rem,15vw,12rem);pointer-events:none}
+@media (max-width:900px){[data-design="nuss"] .hero .eich-hero{right:0;width:7.5rem}[data-design="nuss"] .hero-text{padding-right:0;padding-bottom:11rem}}
 [data-design="nuss"] .hero-bilder .b1 img{outline:.6rem solid #fff;outline-offset:-.6rem}
 [data-design="nuss"] .hero-bilder .b4{background:var(--akzent-2);color:#fff;border-left:0}
 [data-design="nuss"] .hero-bilder .b4 strong{color:#f0d3b0}
